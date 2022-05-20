@@ -1,1 +1,36 @@
-<p>noticias works!</p>
+
+<!-- Filtro -->
+<div class="container-fluid p-5 bg-primary text-white text-center card">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p> 
+</div>
+
+<!-- Categorias -->
+<div class=" noticias container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2 class="bg-primary text-white text-center card">Noticias</h2>
+            <article class="articulo card" *ngFor="articulo of noticias">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </article>
+        </div>
+        <div class="col-sm-4 ml-1.5 mr-1.5">
+            <div class="categorias card">
+                <h3 class="border-bottom mb-3">Categorias</h3>
+                <ul>
+                    <li><a href="" class="nav-link">Categoria 1</a></li>
+                    <li><a href="" class="nav-link">Categoria 2</a></li>
+                    <li><a href="" class="nav-link">Categoria 3</a></li>
+                    <li><a href="" class="nav-link">Categoria 4</a></li>
+                    <li><a href="" class="nav-link">Categoria 5</a></li>
+                    <li><a href="" class="nav-link">Categoria 6</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
