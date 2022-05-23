@@ -12,19 +12,34 @@ import { HomeComponent } from './components/home/home.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { ColeLocalidadComponent } from './components/busqueda/cole-localidad/cole-localidad.component';
 import { ColeNombreComponent } from './components/busqueda/cole-nombre/cole-nombre.component';
+import { Minutos20Component } from './components/noticias/minutos20/minutos20.component';
+import { EducatoleranciaComponent } from './components/noticias/educatolerancia/educatolerancia.component';
+import { ElmundoComponent } from './components/noticias/elmundo/elmundo.component';
+
+// Librerias Externas
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const appRoutes: Routes = [
   {
     path:'', component: HomeComponent
   },
   {
-    path:'noticias', component: NoticiasComponent
-  },
-  {
     path:'busqueda/localizacion', component: ColeLocalidadComponent
   },
   {
     path:'busqueda/cole', component: ColeNombreComponent
+  },
+  {
+    path:'20minutos', component: Minutos20Component
+  },
+  {
+    path:'educatolerancia', component: EducatoleranciaComponent
+  },
+  {
+    path:'elmundo', component: ElmundoComponent
+  },
+  {
+    path:'noticias', component: NoticiasComponent
   },
 ]
 
@@ -36,13 +51,17 @@ const appRoutes: Routes = [
     HomeComponent,
     NoticiasComponent,
     ColeLocalidadComponent,
-    ColeNombreComponent
+    ColeNombreComponent,
+    Minutos20Component,
+    EducatoleranciaComponent,
+    ElmundoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
