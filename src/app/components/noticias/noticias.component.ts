@@ -30,8 +30,8 @@ export class NoticiasComponent implements OnInit {
     else if(this.medio == 'et'){
       this.titulo = 'EducaTolerancia'
     }
-    else if(this.medio == 'm'){
-      this.titulo = 'El Mundo'
+    else if(this.medio == 'van'){
+      this.titulo = 'La Vanguardia'
     }
   }
 

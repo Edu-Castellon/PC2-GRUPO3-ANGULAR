@@ -14,7 +14,7 @@ import { ColeLocalidadComponent } from './components/busqueda/cole-localidad/col
 import { ColeNombreComponent } from './components/busqueda/cole-nombre/cole-nombre.component';
 import { Minutos20Component } from './components/noticias/minutos20/minutos20.component';
 import { EducatoleranciaComponent } from './components/noticias/educatolerancia/educatolerancia.component';
-import { ElmundoComponent } from './components/noticias/elmundo/elmundo.component';
+import { LavanguardiaComponent } from './components/noticias/lavanguardia/lavanguardia.component';
 
 // Librerias Externas
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     path:'educatolerancia', component: EducatoleranciaComponent
   },
   {
-    path:'elmundo', component: ElmundoComponent
+    path:'lavanguardia', component: LavanguardiaComponent
   },
   {
     path:'noticias', component: NoticiasComponent
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
     ColeNombreComponent,
     Minutos20Component,
     EducatoleranciaComponent,
-    ElmundoComponent
+    LavanguardiaComponent
   ],
   imports: [
     BrowserModule,

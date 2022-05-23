@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ElmundoComponent } from './elmundo.component';
+import { LavanguardiaComponent } from './lavanguardia.component';
 
-describe('ElmundoComponent', () => {
-  let component: ElmundoComponent;
-  let fixture: ComponentFixture<ElmundoComponent>;
+describe('LavanguardiaComponent', () => {
+  let component: LavanguardiaComponent;
+  let fixture: ComponentFixture<LavanguardiaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ElmundoComponent ]
+      declarations: [ LavanguardiaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ElmundoComponent);
+    fixture = TestBed.createComponent(LavanguardiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
