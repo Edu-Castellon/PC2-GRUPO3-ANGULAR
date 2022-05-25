@@ -9,12 +9,12 @@
         <div class="col-sm-8">
             <!-- Articulos -->
             <h2 class="bg-primary text-white text-center card">Noticias</h2>
-            <article class="articulo card" *ngFor="let data of dataset | paginate: { itemsPerPage: 10, currentPage: pages}">
-                <img src="..." class="card-img-top" alt="...">
+            <article class="articulo card" *ngFor="let articulo of articulos | paginate: { itemsPerPage: 5, currentPage: pages}">
+                <img [src]="articulo.url_imgs" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{articulo.titulo}}</h5>
+                  <p class="card-text">{{articulo.descripciones}}</p>
+                  <a href="#" class="btn btn-primary btn-block">Ver noticia</a>
                 </div>
             </article>
             <pagination-controls (pageChange)="pages = $event" previousLabel = "" nextLabel=""></pagination-controls>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/service/api-service.service';
 
 @Component({
   selector: 'app-noticias',
@@ -19,9 +20,9 @@ export class NoticiasComponent implements OnInit {
   ];
 
   pages: number = 1;
-  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
+  articulos: any;
 
-  constructor() { }
+  constructor(private dataService: ApiServiceService) { }
 
   ngOnInit(): void {
     if(this.medio == '20m'){
@@ -29,6 +30,9 @@ export class NoticiasComponent implements OnInit {
     }
     else if(this.medio == 'et'){
       this.titulo = 'EducaTolerancia'
+      this.dataService.getNoticias().subscribe(res => {
+        this.articulos = res;
+      });
     }
     else if(this.medio == 'van'){
       this.titulo = 'La Vanguardia'
@@ -36,6 +40,6 @@ export class NoticiasComponent implements OnInit {
   }
 
   categoriaSeleccionada(categoria: any){
-    //console.log(categoria)
+    
   }
 }
