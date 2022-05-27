@@ -1,0 +1,17 @@
+<article class=" container articulo">
+    <div>
+        <a [href]="articulo.url_foto" class="image-popup">
+            <img [src]="articulo.url_foto" [title]="articulo.titulo" >
+        </a>
+    </div>
+    <div>
+        <h1>{{articulo.titulo}}</h1>
+        <div>
+            <span>{{articulo.fecha}}</span>
+            <span>{{articulo.autor}}</span>
+        </div>
+        <div>
+            <div class="cuerpo" [innerHTML]="articulo.cuerpo"></div>
+        </div>
+    </div>
+</article>

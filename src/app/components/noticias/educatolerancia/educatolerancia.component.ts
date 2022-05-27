@@ -11,7 +11,6 @@ export class EducatoleranciaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

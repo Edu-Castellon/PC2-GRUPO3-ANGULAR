@@ -1,4 +1,3 @@
-
 <!-- Filtro -->
 <div class="container-fluid p-5 bg-primary text-white text-center card">
     <h1>{{titulo}}</h1>
@@ -9,15 +8,18 @@
         <div class="col-sm-8">
             <!-- Articulos -->
             <h2 class="bg-primary text-white text-center card">Noticias</h2>
-            <article class="articulo card" *ngFor="let articulo of articulos | paginate: { itemsPerPage: 5, currentPage: pages}">
-                <img [src]="articulo.url_imgs" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{articulo.titulo}}</h5>
-                  <p class="card-text">{{articulo.descripciones}}</p>
-                  <a href="#" class="btn btn-primary btn-block">Ver noticia</a>
-                </div>
-            </article>
-            <pagination-controls (pageChange)="pages = $event" previousLabel = "" nextLabel=""></pagination-controls>
+            <app-spinner *ngIf="loading"></app-spinner>
+            <div *ngIf="!loading">
+                <article class="articulo card" *ngFor="let articulo of articulos | paginate: { itemsPerPage: 5, currentPage: pages}">
+                    <img [src]="articulo.url_foto" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{articulo.titulo}}</h5>
+                        <p class="card-text">{{articulo.descripcion}}</p>
+                        <button routerLink="/noticias/detalle/{{articulo.id_article}}" class="btn btn-primary btn-block">Ver noticia</button>
+                    </div>
+                </article>
+                <pagination-controls (pageChange)="pages = $event" previousLabel="" nextLabel=""></pagination-controls>
+            </div>
         </div>
         <!-- Categorias -->
         <div class="col-sm-4 ml-1.5 mr-1.5">
@@ -25,7 +27,8 @@
                 <h3 class="border-bottom mb-3">Categorias</h3>
                 <ul>
                     <li *ngFor="let categoria of categorias">
-                        <button [value]="categoria.value" type="button" class="boton nav-link" (click)="categoriaSeleccionada(categoria.value)">{{categoria.nombre}}</button>
+                        <button [value]="categoria.value" type="button" class="boton nav-link"
+                            (click)="categoriaSeleccionada(categoria.value)">{{categoria.nombre}}</button>
                     </li>
                 </ul>
             </div>

@@ -18,6 +18,8 @@ import { LavanguardiaComponent } from './components/noticias/lavanguardia/lavang
 
 // Librerias Externas
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { NoticiaDetalleComponent } from './components/noticias/noticia-detalle/noticia-detalle.component';
 
 const appRoutes: Routes = [
   {
@@ -41,6 +43,9 @@ const appRoutes: Routes = [
   {
     path:'noticias', component: NoticiasComponent
   },
+  {
+    path:'noticias/detalle/:id_articulo', component: NoticiaDetalleComponent
+  },
 ]
 
 @NgModule({
@@ -54,7 +59,9 @@ const appRoutes: Routes = [
     ColeNombreComponent,
     Minutos20Component,
     EducatoleranciaComponent,
-    LavanguardiaComponent
+    LavanguardiaComponent,
+    SpinnerComponent,
+    NoticiaDetalleComponent
   ],
   imports: [
     BrowserModule,
