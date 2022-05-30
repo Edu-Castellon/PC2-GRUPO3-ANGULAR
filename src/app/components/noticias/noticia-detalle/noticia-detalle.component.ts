@@ -10,6 +10,8 @@ import { ApiServiceService } from 'src/app/service/api-service.service';
 })
 export class NoticiaDetalleComponent implements OnInit {
 
+  loading = true;
+
   data: any;
   articulo = new Noticia();
 
@@ -23,6 +25,7 @@ export class NoticiaDetalleComponent implements OnInit {
     this.dataService.getNoticiasById(this.route.snapshot.params['id_articulo']).subscribe(res =>{
       this.data = res;
       this.articulo = this.data;
+      this.loading = false;
     });
   }
 }

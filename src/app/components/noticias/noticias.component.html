@@ -5,9 +5,9 @@
 
 <div class=" noticias container">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-12">
             <!-- Articulos -->
-            <h2 class="bg-primary text-white text-center card">Noticias</h2>
+            <h2 class="bg-primary text-white text-center card p-2">Noticias</h2>
             <app-spinner *ngIf="loading"></app-spinner>
             <div *ngIf="!loading">
                 <article class="articulo card" *ngFor="let articulo of articulos | paginate: { itemsPerPage: 5, currentPage: pages}">
@@ -19,18 +19,6 @@
                     </div>
                 </article>
                 <pagination-controls (pageChange)="pages = $event" previousLabel="" nextLabel=""></pagination-controls>
-            </div>
-        </div>
-        <!-- Categorias -->
-        <div class="col-sm-4 ml-1.5 mr-1.5">
-            <div class="categorias card">
-                <h3 class="border-bottom mb-3">Categorias</h3>
-                <ul>
-                    <li *ngFor="let categoria of categorias">
-                        <button [value]="categoria.value" type="button" class="boton nav-link"
-                            (click)="categoriaSeleccionada(categoria.value)">{{categoria.nombre}}</button>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>

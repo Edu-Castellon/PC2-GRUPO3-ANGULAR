@@ -12,9 +12,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { ColeLocalidadComponent } from './components/busqueda/cole-localidad/cole-localidad.component';
 import { ColeNombreComponent } from './components/busqueda/cole-nombre/cole-nombre.component';
-import { Minutos20Component } from './components/noticias/minutos20/minutos20.component';
-import { EducatoleranciaComponent } from './components/noticias/educatolerancia/educatolerancia.component';
-import { LavanguardiaComponent } from './components/noticias/lavanguardia/lavanguardia.component';
 
 // Librerias Externas
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -30,15 +27,6 @@ const appRoutes: Routes = [
   },
   {
     path:'busqueda/cole', component: ColeNombreComponent
-  },
-  {
-    path:'20minutos', component: Minutos20Component
-  },
-  {
-    path:'educatolerancia', component: EducatoleranciaComponent
-  },
-  {
-    path:'lavanguardia', component: LavanguardiaComponent
   },
   {
     path:'noticias', component: NoticiasComponent
@@ -57,9 +45,6 @@ const appRoutes: Routes = [
     NoticiasComponent,
     ColeLocalidadComponent,
     ColeNombreComponent,
-    Minutos20Component,
-    EducatoleranciaComponent,
-    LavanguardiaComponent,
     SpinnerComponent,
     NoticiaDetalleComponent
   ],
