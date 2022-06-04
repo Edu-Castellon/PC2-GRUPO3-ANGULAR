@@ -8,14 +8,18 @@ import { ApiServiceService } from 'src/app/service/api-service.service';
 })
 export class HomeComponent implements OnInit {
 
+  inicio = true;
+
   constructor(private dataService: ApiServiceService) { }
 
   ngOnInit(): void {
-    this.dataService.webscraping().subscribe(
-      res => {
-      console.log('Webscraping hecho')
+    if(this.inicio){
+      this.dataService.webscraping().subscribe(
+        res => {
+        console.log('Webscraping hecho')
+      }
+      );
+      this.inicio = false;
     }
-    );
   }
-
 }

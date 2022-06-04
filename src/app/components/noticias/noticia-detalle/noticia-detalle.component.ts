@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Noticia } from 'src/app/noticia';
+import { Noticia } from 'src/app/models/noticia'; 
 import { ApiServiceService } from 'src/app/service/api-service.service';
 
 @Component({

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GRUPO3-PC2-ANGULAR';
+
+  nombre: any;
 }

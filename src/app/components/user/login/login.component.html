@@ -1,0 +1,42 @@
+<div class="container col-4 mt-4">
+
+    <header class="text-center">
+        <h1>Iniciar sesion</h1>
+    </header>
+
+    <form class="inicio" (ngSubmit)="submit()" [formGroup]="form">
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="text" formControlName="email" name="email" class="form-control" aria-describedby="emailHelp"
+                placeholder="Introduce el correo" [ngClass]="{'is-invalid': submitted && f['email'].errors}">
+
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors?.['required']">
+                    Email is required
+                </div>
+
+                <div *ngIf="f['email'].errors?.['email']">
+                    Email must ba a valid email address
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" formControlName="password" name="password" class="form-control"
+                [ngClass]="{'is-invalid': submitted && f['password'].errors}" placeholder="Introduce la contraseña">
+
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors?.['required']">
+                    Password is required
+                </div>
+
+                <div *ngIf="f['password'].errors?.['minlength']">
+                    Password must be atleast 6 characters
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    </form>
+</div>
