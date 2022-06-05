@@ -14,6 +14,7 @@ import { NoticiasDetalleComponent } from './componentes/home/noticias-detalle/no
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { ColegiosDetalleComponent } from './componentes/home/colegios-detalle/colegios-detalle.component';
 
 const appRoutes: Routes = [
   {
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
       { path: 'busqueda/nombre', component: ColegiosNombreComponent },
       { path: 'noticias', component: NoticiasComponent },
       { path: 'noticias/detalle/:id_articulo', component: NoticiasDetalleComponent },
+      { path: 'colegios/:nombre_colegio', component: ColegiosDetalleComponent },
     ]
   },
   {

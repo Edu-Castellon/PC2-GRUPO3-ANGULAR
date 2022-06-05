@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>{{colegio.nombre_colegio}}</h1>
+    <p>Reseña media de Google: {{colegio.opinion_media}}</p>
+    <p>{{colegio.comentarios_cant}}</p>
+    <p>Dirección: {{colegio.direccion}}</p>
+    
+    <div class="list-group">
+        <span class="list-group-item list-group-item-action active">Opiniones</span>
+        <div class="list-group-item list-group-item-action"
+            *ngFor="let opinion of colegio.opiniones">
+            <ul>
+                <li>
+                    <h3>{{opinion.usuario}}</h3>
+                </li>
+                <li>
+                    <p>{{opinion.comentario}}</p>
+                </li>
+                <li>
+                    <p>Analisis sentimiento: {{opinion.analisis_sent}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

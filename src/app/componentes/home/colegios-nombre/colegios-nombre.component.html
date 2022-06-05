@@ -1,18 +1,27 @@
-<br><br><br>
-<div class="input-group">
-    <input type="search" class="form-control rounded" placeholder="Introduce el nombre del colegio" aria-label="Search"
-        aria-describedby="search-addon" />
-    <button type="button" class="btn btn-outline-primary">Buscar</button>
-</div>
+<div class="container">
+    <div class="input-group">
+        <input type="text" class="form-control rounded" placeholder="Introduce el nombre del colegio"
+            aria-label="Search" aria-describedby="search-addon" name="busqueda" [(ngModel)]="busqueda" />
+        <button type="button" (click)="submit()" class="btn btn-outline-primary">Buscar</button>
+    </div>
 
-<br><br><br>
-
-<div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action active">
-        Listado de colegios
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-    <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-    <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-    <button type="button" class="list-group-item list-group-item-action">Vestibulum at eros</button>
+    <div class="list-group">
+        <span class="list-group-item list-group-item-action active">Listado de colegios</span>
+        <app-spinner class="list-group-item list-group-item-action mt-1 mb-1" *ngIf="loading"></app-spinner>
+        <button routerLink="/colegios/{{colegio.nombre_colegio}}" class="list-group-item list-group-item-action"
+            *ngFor="let colegio of colegios">
+            <ul>
+                <li>
+                    <h1>{{colegio.nombre_colegio}}</h1>
+                </li>
+                <li>
+                    <span>{{colegio.opinion_media}}</span>
+                    <span class="ml-2">{{colegio.comentarios_cant}}</span>
+                </li>
+                <li>
+                    <span>{{colegio.direccion}}</span>
+                </li>
+            </ul>
+        </button>
+    </div>
 </div>

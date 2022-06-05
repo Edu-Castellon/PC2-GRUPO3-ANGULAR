@@ -35,4 +35,12 @@ export class ApiServiceService {
   getUserData(){
     return this.httpClient.post(environment.apiUrl+'/auth/me', this.authguard.getToken());
   }
+
+  webscrapingGM(busqueda: any){
+    return this.httpClient.post(environment.apiUrl+'/webscraping/colegios/GM', busqueda);
+  }
+
+  getColegio(nombre_colegio: any){
+    return this.httpClient.get(environment.apiUrl+'/colegios/'+nombre_colegio);
+  }
 }
