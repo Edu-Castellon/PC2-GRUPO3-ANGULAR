@@ -1,4 +1,5 @@
-<div class="container">
+<app-spinner *ngIf="spinner"></app-spinner>
+<div class="container mt-2 mb-2" *ngIf="!spinner">
     <h1>{{colegio.nombre_colegio}}</h1>
     <p>Reseña media de Google: {{colegio.opinion_media}}</p>
     <p>{{colegio.comentarios_cant}}</p>

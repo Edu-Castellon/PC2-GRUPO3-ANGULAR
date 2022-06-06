@@ -40,7 +40,19 @@ export class ApiServiceService {
     return this.httpClient.post(environment.apiUrl+'/webscraping/colegios/GM', busqueda);
   }
 
-  getColegio(nombre_colegio: any){
+  getColegioDetalle(nombre_colegio: any){
     return this.httpClient.get(environment.apiUrl+'/colegios/'+nombre_colegio);
+  }
+
+  getCiudades(){
+    return this.httpClient.get(environment.apiUrl+'/webscraping/colegios/MiCole/ciudades');
+  }
+
+  getProvincias(ciudad: any){
+    return this.httpClient.get(environment.apiUrl+'/webscraping/colegios/MiCole/provincias/'+ciudad);
+  }
+
+  prueba(data: any){
+    return this.httpClient.post(environment.apiUrl+'/prueba', data);
   }
 }

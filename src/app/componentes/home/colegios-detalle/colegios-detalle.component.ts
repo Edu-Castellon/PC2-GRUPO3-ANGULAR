@@ -13,6 +13,8 @@ export class ColegiosDetalleComponent implements OnInit {
   data:any;
   colegio = new Colegio();
 
+  spinner = true
+
   constructor(private route: ActivatedRoute, private dataService: ApiServiceService) { }
 
   ngOnInit(): void {
@@ -20,9 +22,10 @@ export class ColegiosDetalleComponent implements OnInit {
   }
 
   getOpiniones(){
-    this.dataService.getColegio(this.route.snapshot.params['nombre_colegio']).subscribe(res =>{
+    this.dataService.getColegioDetalle(this.route.snapshot.params['nombre_colegio']).subscribe(res =>{
       this.data = res;
       this.colegio = this.data;
+      this.spinner = false
     });
   }
 
